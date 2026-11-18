@@ -89,34 +89,34 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 16px;
       text-decoration: none;
       color: var(--text);
     }
 
     .brand-logo-img {
-      width: 52px;
-      height: 52px;
+      width: 78px;
+      height: 78px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
-      border: 2px solid #bae6fd;
+      box-shadow: 0 4px 16px rgba(37, 99, 235, 0.28);
+      border: 3px solid #0284c7;
       background: #ffffff;
       flex-shrink: 0;
     }
 
     .brand-text h1 {
-      font-size: 18px;
+      font-size: 21px;
       font-weight: 900;
-      letter-spacing: -0.3px;
-      line-height: 1.1;
+      letter-spacing: -0.4px;
+      line-height: 1.15;
       color: #0f172a;
     }
 
     .brand-text span {
-      font-size: 11px;
+      font-size: 12px;
       color: #0284c7;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: 0.8px;
       text-transform: uppercase;
     }
@@ -352,41 +352,56 @@
       color: #0f172a;
     }
 
-    /* HIGHLIGHT BOX (STOPAJ FOCUS) */
-    .highlight-card {
-      background: #fffbeb;
-      border: 1px solid #fde68a;
+    /* CRISIS & PRIMARY DEMAND CARD (MAĞDURİYET & ANAPARA ODAKLI) */
+    .crisis-card {
+      background: #ffffff;
+      border: 2px solid #ef4444;
       border-radius: 20px;
-      padding: 26px 30px;
+      padding: 30px 34px;
       margin-bottom: 45px;
-      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.05);
+      box-shadow: 0 10px 30px rgba(239, 68, 68, 0.08);
       position: relative;
     }
 
-    .highlight-badge {
+    .crisis-badge {
       display: inline-block;
-      background: #f59e0b;
+      background: #dc2626;
       color: #ffffff;
-      font-size: 11px;
+      font-size: 11.5px;
       font-weight: 900;
-      letter-spacing: 0.6px;
+      letter-spacing: 0.8px;
       text-transform: uppercase;
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 6px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
-    .highlight-card h3 {
-      font-size: 19px;
+    .crisis-card h3 {
+      font-size: 23px;
+      font-weight: 900;
+      color: #991b1b;
+      margin-bottom: 14px;
+      letter-spacing: -0.5px;
+      line-height: 1.25;
+    }
+
+    .crisis-card p {
+      font-size: 15px;
+      color: #334155;
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .crisis-highlight {
+      background: #fef2f2;
+      border-left: 4px solid #dc2626;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      font-size: 15.5px;
       font-weight: 800;
-      color: #b45309;
-      margin-bottom: 10px;
-    }
-
-    .highlight-card p {
-      font-size: 14px;
-      color: #78350f;
-      line-height: 1.65;
+      color: #991b1b;
+      margin-top: 16px;
+      line-height: 1.6;
     }
 
     /* DEMANDS SECTION */
@@ -521,11 +536,11 @@
 
       <!-- ACTION CARD -->
       <div class="action-card">
-        <img src="./logo.jpg" alt="Platform Logosu" style="width: 76px; height: 76px; border-radius: 50%; margin: 0 auto 14px; display: block; border: 2px solid rgba(56, 189, 248, 0.6); box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4); background: #ffffff;">
+        <img src="./logo.jpg" alt="Platform Logosu" style="width: 96px; height: 96px; border-radius: 50%; margin: 0 auto 16px; display: block; border: 3px solid #0284c7; box-shadow: 0 6px 24px rgba(37, 99, 235, 0.35); background: #ffffff; object-fit: cover;">
         <span class="action-date-tag">19.11.2026 · ANKARA DEKLARASYONU</span>
         <h3 class="action-title">Resmi Basın Dosyası</h3>
         <p class="action-desc">
-          Platformumuzun yetkili makamlara ve TBMM'ye ilettiği 6 sayfalık gerekçeli deklarasyon ve talep raporu.
+          TBMM ve yetkili makamlara sunulmak üzere hazırlanan 6 sayfalık gerekçeli deklarasyon ve talep dosyası.
         </p>
 
         <a class="btn-download-pdf" href="./Basin_Bulteni_19112026.pdf" download="Fon_Magdurlari_Hak_Arama_Basin_Bulteni.pdf">
@@ -566,6 +581,21 @@
       </div>
     </div>
 
+    <!-- CRISIS & PRIMARY DEMAND VURGUSU (ASIL MESELE ANAPARA + TÜFE) -->
+    <div class="crisis-card">
+      <span class="crisis-badge">ASIL VE VAZGEÇİLMEZ TALEP</span>
+      <h3>Bu Bir Piyasa Riski Değildir; Alın Terimizin ve Geleceğimizin Gasp Edilmesidir!</h3>
+      <p>
+        Yüz binlerce yurttaş; devletine, Cumhurbaşkanlığına ve Hazine-Maliye yönetiminin <em>"birikimlerinizi kayıtlı finansal sistemde değerlendirin"</em> çağrılarına güvenerek emeklilik ikramiyelerini, evlatlarının eğitim bütçelerini, ev peşinatlarını ve tedavi masraflarını bizzat <strong>SPK gözetimindeki yasal fonlara</strong> emanet etmiştir.
+      </p>
+      <p>
+        Ortada ticari bir yatırım zararı veya öngörülebilir borsa dalgalanması yoktur; denetim zafiyetlerinden faydalanan usulsüzlüklerle yüz binlerce ailenin hayatı karartılmış, insanlar intiharın eşiğine sürüklenmiştir. Mağduriyet hiçbir surette yıllara yayılan sürüncemeli tasfiye süreçlerine terk edilemez!
+      </p>
+      <div class="crisis-highlight">
+        KIRMIZI ÇİZGİMİZ: Her bir hak sahibinin NET ANAPARASI, paranın sistemde kilitlendiği ilk günden ödeme gününe kadar hesaplanacak TÜFE (enflasyon) farkıyla birlikte EKSİKSİZ VE PEŞİN olarak karşılanmalıdır! Stopaj iadesi ve el konulan varlıklar yalnızca devletin bu ödemeleri gerçekleştirmesi için kaynak önerilerimizdir; yatırımcının tek ve tartışmasız hakkı net anaparasını kuruşu kuruşuna geri almaktır.
+      </div>
+    </div>
+
     <!-- DEMANDS SECTION (5 ACİL TALEP) -->
     <div class="demands-section">
       <div class="section-header">
@@ -576,34 +606,25 @@
       <div class="demands-grid">
         <div class="demand-item">
           <h4>1. Net Anapara & TÜFE Farkı</h4>
-          <p>Tüm fonlarda hak sahiplerinin net anapara tutarları, TÜFE esas alınarak hesaplanacak satın alma gücü kaybıyla birlikte eksiksiz karşılanmalıdır.</p>
+          <p>Tüm fonlarda hak sahiplerinin net anapara tutarları, TÜFE esas alınarak hesaplanacak satın alma gücü kaybıyla birlikte eksiksiz ve koşulsuz karşılanmalıdır.</p>
         </div>
         <div class="demand-item">
-          <h4>2. Bağlayıcı Ödeme Takvimi</h4>
-          <p>Ödeme günlerini, kaynak yöntemini ve aşamalarını gösteren uygulanması taahhüt edilmiş resmi takvim en geç 2026 yılı bitmeden kamuoyuna ilan edilmelidir.</p>
+          <h4>2. Bağlayıcı ve Kesin Ödeme Takvimi</h4>
+          <p>Ödeme günlerini, kaynak yöntemini ve aşamalarını gösteren, uygulanması devlet güvencesiyle taahhüt edilmiş resmi takvim ivedilikle kamuoyuna ilan edilmelidir.</p>
         </div>
         <div class="demand-item">
-          <h4>3. Kilitli Fonların Açıklanması</h4>
-          <p>Tera Portföy'ün 15 fonu (TMV, TMM, TRJ, FSU vb.) ile Pusula, Bulls ve Alnus nezdinde 20 günü aşkın süredir rehin kalan ara ödemelerin durumu derhâl açıklanmalıdır.</p>
+          <h4>3. Kilitli ve Rehin Fonların Derhal Açılması</h4>
+          <p>Tera Portföy'ün 15 fonu (TMV, TMM, TRJ, FSU vb.) ile Pusula, Bulls ve Alnus nezdinde haftalardır rehin tutulan ara ödemelerin durumu derhâl açıklanmalı ve blokajlar kaldırılmalıdır.</p>
         </div>
         <div class="demand-item">
-          <h4>4. Stopaj Tutarlarının Fonlara İadesi</h4>
-          <p>Yatırımcılardan kesilerek Hazineye aktarılan stopaj tutarları, hak sahiplerine yapılacak anapara ve enflasyon ödemelerine kaynak olarak ilgili fonlara iade edilmelidir.</p>
+          <h4>4. Hazine Desteği & "Clawback" (Varlıkların Geri Çağrılması)</h4>
+          <p>Mağduriyet yıllarca sürecek tasfiyeye bırakılamaz; Hazine finansmanı sağlanmalı ve usulsüzlükle ilişkili şirketlere aktarılan tüm varlıklar kamu gücüyle derhal geri çağrılmalıdır.</p>
         </div>
         <div class="demand-item" style="grid-column: span 2;">
-          <h4>5. Hazine Desteği & "Clawback" (Varlıkların Geri Çağrılması)</h4>
-          <p>Mağduriyet yalnızca yıllarca sürecek tasfiyeye bırakılamaz; Hazine finansmanı sağlanmalı ve usulsüzlükle ilişkili şirketlere haksız aktarılan varlıklar kamu gücüyle derhal geri çağrılmalıdır.</p>
+          <h4>5. Stopaj ve Kamu Kaynaklarının Fonlara İadesi</h4>
+          <p>Yatırımcılardan kesilerek Hazineye aktarılan stopaj tutarları ile el konulan fon varlıkları, hak sahiplerine yapılacak anapara ve enflasyon ödemelerine doğrudan kaynak olarak ilgili fonlara aktarılmalıdır.</p>
         </div>
       </div>
-    </div>
-
-    <!-- STOPAJ DETAY ÇERÇEVESİ -->
-    <div class="highlight-card">
-      <span class="highlight-badge">KAYNAK ÇÖZÜMÜ</span>
-      <h3>Stopaj Tutarları Fonlara İade Edilmelidir</h3>
-      <p>
-        "Tasfiye kapsamındaki fonların işlemleri nedeniyle yatırımcılardan kesilerek Hazineye aktarılan stopaj tutarları, mağduriyetlerin giderilmesinde kullanılmak üzere ilgili fonlara iade edilmelidir. İade edilen tutarlar, hak sahiplerine yapılacak anapara ve enflasyon farkı ödemelerine kaynak olarak aktarılmalı; bu tutarların fonlara ve yatırımcılara nasıl yansıtıldığı açıkça gösterilmelidir. Mağduriyetleri gidermek amacıyla yapılacak ödemelerin yeni vergi kesintileriyle eksilmemesini sağlayacak düzenlemeler de ivedilikle yapılmalıdır."
-      </p>
     </div>
 
   </main>
