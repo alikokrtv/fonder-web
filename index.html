@@ -3,25 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FON MAĞDURLARI HAK ARAMA PLATFORMU | fonder.org.tr</title>
-  <meta name="description" content="Fon Mağdurları Hak Arama Platformu Resmi Portalı. Birikimlerimize erişim, kayıplarımıza çözüm istiyoruz: Anapara, TÜFE farkı ve stopaj iadeleri eksiksiz ödenmelidir.">
+  <title>FON MAĞDURLARI HAK ARAMA VE DAYANIŞMA PLATFORMU | fonder.org.tr</title>
+  <meta name="description" content="Tasarruf sahipsiz değildir! 455 bin mağdur, 2 milyon yurttaş hak arıyor: Net Anapara ve TÜFE farkı eksiksiz iade edilmelidir.">
   <link rel="icon" type="image/jpeg" href="./logo.jpg">
-  <link rel="apple-touch-icon" href="./logo.jpg">
-  <meta property="og:image" content="./logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --border: #e2e8f0;
-      --accent: #2563eb;
-      --accent-glow: rgba(37, 99, 235, 0.2);
-      --red: #dc2626;
-      --gold: #d97706;
-      --text: #0f172a;
-      --muted: #475569;
+      --bg: #090a0f;
+      --card-bg: #12151e;
+      --card-border: #1e2538;
+      --red: #ef4444;
+      --red-dark: #b91c1c;
+      --red-glow: rgba(239, 68, 68, 0.25);
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --gold: #f59e0b;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,58 +30,56 @@
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       min-height: 100vh;
       overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.06) 0%, transparent 60%),
-        radial-gradient(circle at 10% 30%, rgba(239, 68, 68, 0.03) 0%, transparent 45%);
+        radial-gradient(circle at 50% -10%, rgba(220, 38, 38, 0.22) 0%, transparent 60%),
+        radial-gradient(circle at 10% 40%, rgba(15, 23, 42, 0.9) 0%, transparent 50%),
+        linear-gradient(180deg, #090a0f 0%, #0d1117 100%);
     }
 
-    /* TOP NOTIFICATION BAR */
-    .top-bar {
-      background: #0f172a;
+    /* URGENT EMERGENCY BAR */
+    .emergency-bar {
+      background: linear-gradient(90deg, #991b1b, #dc2626, #991b1b);
       color: #ffffff;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 10px 20px;
+      padding: 12px 20px;
+      font-weight: 800;
+      font-size: 13.5px;
+      letter-spacing: 0.5px;
       text-align: center;
-      font-size: 13px;
-      font-weight: 600;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
+      box-shadow: 0 4px 20px rgba(220, 38, 38, 0.4);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    .top-badge {
-      background: #dc2626;
-      color: #fff;
-      padding: 2px 8px;
-      border-radius: 4px;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
+    .pulse-dot {
+      width: 10px;
+      height: 10px;
+      background: #ffffff;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #ffffff;
+      animation: blink 1.2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
     }
 
     /* HEADER */
     header {
       width: 100%;
-      background: #ffffff;
+      max-width: 1140px;
       margin: 0 auto;
-      padding: 18px 24px;
+      padding: 24px 20px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.03);
-    }
-
-    .header-inner {
-      width: 100%;
-      max-width: 1180px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .brand {
@@ -91,538 +87,608 @@
       align-items: center;
       gap: 16px;
       text-decoration: none;
-      color: var(--text);
     }
 
-    .brand-logo-img {
-      width: 78px;
-      height: 78px;
+    .brand-logo {
+      width: 82px;
+      height: 82px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 4px 16px rgba(37, 99, 235, 0.28);
-      border: 3px solid #0284c7;
+      border: 3px solid #38bdf8;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
       background: #ffffff;
       flex-shrink: 0;
     }
 
-    .brand-text h1 {
-      font-size: 21px;
-      font-weight: 900;
-      letter-spacing: -0.4px;
-      line-height: 1.15;
-      color: #0f172a;
+    .brand-titles h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #ffffff;
+      line-height: 1.1;
     }
 
-    .brand-text span {
-      font-size: 12px;
-      color: #0284c7;
-      font-weight: 800;
+    .brand-titles span {
+      font-size: 13px;
+      font-weight: 700;
+      color: #38bdf8;
       letter-spacing: 0.8px;
       text-transform: uppercase;
     }
 
-    .header-actions {
+    .btn-header-pdf {
       display: flex;
       align-items: center;
-      gap: 14px;
-    }
-
-    .btn-pdf-header {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      color: #1d4ed8;
-      padding: 8px 16px;
-      border-radius: 10px;
-      font-size: 13px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-
-    .btn-pdf-header:hover {
-      background: #2563eb;
+      gap: 10px;
+      background: #dc2626;
       color: #ffffff;
-      transform: translateY(-1px);
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 13.5px;
+      transition: all 0.2s;
+      box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+    }
+
+    .btn-header-pdf:hover {
+      background: #ef4444;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(220, 38, 38, 0.6);
     }
 
     /* MAIN CONTAINER */
     main {
       width: 100%;
-      max-width: 1180px;
+      max-width: 1140px;
       margin: 0 auto;
-      padding: 45px 20px 70px;
+      padding: 40px 20px 80px;
     }
 
-    /* HERO SECTION */
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 45px;
+    /* MANIFESTO HERO */
+    .manifesto-box {
+      background: linear-gradient(180deg, #161a26 0%, #0f121a 100%);
+      border: 1px solid #2a3349;
+      border-left: 6px solid #dc2626;
+      border-radius: 20px;
+      padding: 38px 36px;
+      margin-bottom: 40px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    .badge-tag {
+      display: inline-flex;
       align-items: center;
-      margin-bottom: 50px;
-    }
-
-    .mega-tagline {
-      display: inline-block;
-      padding: 5px 14px;
-      background: #fee2e2;
-      border: 1px solid #fecaca;
-      border-radius: 999px;
-      color: #b91c1c;
+      gap: 6px;
+      background: rgba(220, 38, 38, 0.2);
+      border: 1px solid rgba(220, 38, 38, 0.5);
+      color: #f87171;
       font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
+      font-weight: 800;
+      letter-spacing: 1px;
       text-transform: uppercase;
-      margin-bottom: 16px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      margin-bottom: 18px;
     }
 
-    .hero-title {
-      font-size: 42px;
-      font-weight: 900;
-      line-height: 1.14;
-      letter-spacing: -1.2px;
-      color: #0f172a;
-      margin-bottom: 20px;
+    .main-slogan {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 46px;
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -1.5px;
+      color: #ffffff;
+      margin-bottom: 22px;
     }
 
-    .hero-title span {
-      background: linear-gradient(135deg, #1d4ed8, #0284c7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .main-slogan span.highlight {
+      color: #ef4444;
+      text-decoration: underline;
+      text-decoration-color: rgba(239, 68, 68, 0.5);
+      text-underline-offset: 6px;
     }
 
-    .hero-quote {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-left: 4px solid #0284c7;
-      border-radius: 0 10px 10px 0;
-      padding: 16px 20px;
-      margin-bottom: 24px;
-      font-size: 14.5px;
-      font-style: italic;
-      color: #334155;
+    .manifesto-quote {
+      font-size: 18.5px;
       line-height: 1.6;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      font-style: italic;
+      color: #e2e8f0;
+      background: rgba(0, 0, 0, 0.35);
+      border-left: 3px solid #f59e0b;
+      padding: 16px 20px;
+      border-radius: 0 10px 10px 0;
+      margin-bottom: 24px;
     }
 
-    .hero-desc {
-      font-size: 15.5px;
-      line-height: 1.65;
-      color: var(--muted);
-      margin-bottom: 26px;
+    .manifesto-text {
+      font-size: 16.5px;
+      line-height: 1.75;
+      color: #cbd5e1;
+      margin-bottom: 30px;
     }
 
-    /* STATS STRIP */
-    .stats-strip {
+    /* ACTION CALLOUT IN MANIFESTO */
+    .hero-action-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .btn-main-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #dc2626, #b91c1c);
+      color: #ffffff;
+      padding: 16px 28px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 8px 25px rgba(220, 38, 38, 0.45);
+      transition: all 0.2s;
+    }
+
+    .btn-main-action:hover {
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(220, 38, 38, 0.6);
+    }
+
+    .btn-space-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: #f1f5f9;
+      padding: 16px 24px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-space-action:hover {
+      background: #334155;
+      color: #ffffff;
+      border-color: #475569;
+    }
+
+    /* DERTLİ GERÇEK RAKAMLAR STRIP */
+    .tragedy-stats {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
       margin-bottom: 45px;
     }
 
-    .stat-card {
-      background: #ffffff;
-      border: 1px solid var(--border);
+    .t-card {
+      background: #121622;
+      border: 1px solid #1f2738;
       border-radius: 16px;
-      padding: 22px 18px;
+      padding: 24px 20px;
       text-align: center;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .stat-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-      border-color: #cbd5e1;
-    }
-
-    .stat-num {
-      font-size: 28px;
-      font-weight: 900;
-      color: #0f172a;
-      margin-bottom: 4px;
-      letter-spacing: -0.5px;
-    }
-
-    .stat-num.red { color: #dc2626; }
-    .stat-num.blue { color: #0284c7; }
-    .stat-num.gold { color: #d97706; }
-
-    .stat-lbl {
-      font-size: 12px;
-      color: var(--muted);
-      font-weight: 600;
-      line-height: 1.35;
-    }
-
-    /* RIGHT ACTION CARD */
-    .action-card {
-      background: #ffffff;
-      border: 1px solid #cbd5e1;
-      border-radius: 24px;
-      padding: 32px 26px;
-      text-align: center;
-      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
       position: relative;
+      overflow: hidden;
     }
 
-    .action-card::before {
+    .t-card::before {
       content: "";
       position: absolute;
-      top: -1px; left: 15%; right: 15%;
-      height: 3px;
-      border-radius: 2px;
-      background: linear-gradient(90deg, #1d4ed8, #0284c7);
+      top: 0; left: 0; right: 0; height: 3px;
+      background: #ef4444;
     }
 
-    .action-date-tag {
-      font-size: 11px;
+    .t-num {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 34px;
       font-weight: 800;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      color: #0369a1;
-      background: #e0f2fe;
-      border: 1px solid #bae6fd;
-      padding: 4px 12px;
-      border-radius: 999px;
-      display: inline-block;
-      margin-bottom: 14px;
-    }
-
-    .action-title {
-      font-size: 20px;
-      font-weight: 800;
-      color: #0f172a;
-      margin-bottom: 8px;
-    }
-
-    .action-desc {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 22px;
-      line-height: 1.5;
-    }
-
-    .btn-download-pdf {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      width: 100%;
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      letter-spacing: -1px;
       color: #ffffff;
-      text-decoration: none;
-      padding: 16px 20px;
-      border-radius: 14px;
-      font-size: 15px;
-      font-weight: 800;
-      transition: all 0.2s;
-      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
-      margin-bottom: 12px;
-    }
-
-    .btn-download-pdf:hover {
-      background: linear-gradient(135deg, #1d4ed8, #1e40af);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.4);
-    }
-
-    .btn-spaces {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      width: 100%;
-      background: #f1f5f9;
-      color: #0f172a;
-      border: 1px solid #cbd5e1;
-      text-decoration: none;
-      padding: 12px 20px;
-      border-radius: 14px;
-      font-size: 13.5px;
-      font-weight: 700;
-      transition: all 0.2s;
-    }
-
-    .btn-spaces:hover {
-      background: #e2e8f0;
-      color: #0f172a;
-    }
-
-    /* CRISIS & PRIMARY DEMAND CARD (MAĞDURİYET & ANAPARA ODAKLI) */
-    .crisis-card {
-      background: #ffffff;
-      border: 2px solid #ef4444;
-      border-radius: 20px;
-      padding: 30px 34px;
-      margin-bottom: 45px;
-      box-shadow: 0 10px 30px rgba(239, 68, 68, 0.08);
-      position: relative;
-    }
-
-    .crisis-badge {
-      display: inline-block;
-      background: #dc2626;
-      color: #ffffff;
-      font-size: 11.5px;
-      font-weight: 900;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      padding: 5px 12px;
-      border-radius: 6px;
-      margin-bottom: 14px;
-    }
-
-    .crisis-card h3 {
-      font-size: 23px;
-      font-weight: 900;
-      color: #991b1b;
-      margin-bottom: 14px;
-      letter-spacing: -0.5px;
-      line-height: 1.25;
-    }
-
-    .crisis-card p {
-      font-size: 15px;
-      color: #334155;
-      line-height: 1.7;
-      margin-bottom: 14px;
-    }
-
-    .crisis-highlight {
-      background: #fef2f2;
-      border-left: 4px solid #dc2626;
-      padding: 14px 18px;
-      border-radius: 0 8px 8px 0;
-      font-size: 15.5px;
-      font-weight: 800;
-      color: #991b1b;
-      margin-top: 16px;
-      line-height: 1.6;
-    }
-
-    /* DEMANDS SECTION */
-    .demands-section {
-      margin-bottom: 45px;
-    }
-
-    .section-header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .section-header h2 {
-      font-size: 27px;
-      font-weight: 800;
-      color: #0f172a;
       margin-bottom: 6px;
+      line-height: 1.1;
     }
 
-    .section-header p {
-      font-size: 14.5px;
-      color: var(--muted);
+    .t-num.red { color: #f87171; }
+    .t-num.gold { color: #fbbf24; }
+    .t-num.cyan { color: #38bdf8; }
+
+    .t-lbl {
+      font-size: 13px;
+      font-weight: 700;
+      color: #94a3b8;
+      line-height: 1.4;
     }
 
-    .demands-grid {
+    /* GERÇEK MAĞDUR SESLERİ & DRAM (İNTİHAR, AİLE, SAĞLIK) */
+    .victim-stories {
+      margin-bottom: 45px;
+    }
+
+    .section-title-dram {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title-dram span {
+      color: #ef4444;
+    }
+
+    .section-sub-dram {
+      font-size: 15px;
+      color: #94a3b8;
+      margin-bottom: 22px;
+    }
+
+    .stories-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
 
-    .demand-item {
-      background: #ffffff;
-      border: 1px solid var(--border);
+    .story-card {
+      background: #131722;
+      border: 1px solid #222c3f;
       border-radius: 16px;
-      padding: 20px 22px;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
+      padding: 24px 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .demand-item h4 {
-      font-size: 15.5px;
+    .story-card p {
+      font-size: 14.5px;
+      font-style: italic;
+      color: #e2e8f0;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .story-author {
+      font-size: 12.5px;
       font-weight: 800;
-      color: #0284c7;
-      margin-bottom: 6px;
+      color: #38bdf8;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 12px;
     }
 
-    .demand-item p {
-      font-size: 13.5px;
-      color: #334155;
+    .story-author span {
+      color: #94a3b8;
+      font-weight: 500;
+    }
+
+    /* RED ALERT ASIL TALEP CARD */
+    .primary-demand-banner {
+      background: linear-gradient(135deg, #7f1d1d 0%, #450a0a 100%);
+      border: 2px solid #ef4444;
+      border-radius: 20px;
+      padding: 36px 32px;
+      margin-bottom: 45px;
+      box-shadow: 0 15px 40px rgba(220, 38, 38, 0.25);
+    }
+
+    .demand-badge {
+      display: inline-block;
+      background: #dc2626;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      padding: 4px 12px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .primary-demand-banner h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 14px;
+      letter-spacing: -0.8px;
+      line-height: 1.2;
+    }
+
+    .primary-demand-banner p {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #fecaca;
+      margin-bottom: 20px;
+    }
+
+    .red-demand-box {
+      background: rgba(0, 0, 0, 0.4);
+      border: 2px dashed #f87171;
+      padding: 20px 24px;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.5;
+    }
+
+    .red-demand-box span {
+      color: #fde047;
+      text-decoration: underline;
+    }
+
+    /* 5 ACİL ADIM GRID */
+    .five-steps {
+      margin-bottom: 45px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .step-item {
+      background: #12151e;
+      border: 1px solid #1e2538;
+      border-radius: 14px;
+      padding: 22px 24px;
+      transition: all 0.2s;
+    }
+
+    .step-item:hover {
+      border-color: #3b82f6;
+      transform: translateY(-2px);
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .step-num-circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #dc2626;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    .step-header h4 {
+      font-size: 16.5px;
+      font-weight: 800;
+      color: #f8fafc;
+    }
+
+    .step-item p {
+      font-size: 14px;
+      color: #94a3b8;
       line-height: 1.6;
+      padding-left: 38px;
     }
 
     /* FOOTER */
     footer {
       width: 100%;
-      background: #ffffff;
-      border-top: 1px solid var(--border);
-      padding: 26px 20px;
+      max-width: 1140px;
+      margin: 0 auto;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 30px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: 12px;
       text-align: center;
-      color: var(--muted);
-      font-size: 12.5px;
+      color: #64748b;
+      font-size: 13px;
     }
 
     @media (max-width: 860px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 35px; }
-      .stats-strip { grid-template-columns: repeat(2, 1fr); }
-      .demands-grid { grid-template-columns: 1fr; }
-      .demand-item[style*="span 2"] { grid-column: span 1 !important; }
-      .hero-title { font-size: 30px; }
+      .main-slogan { font-size: 32px; }
+      .tragedy-stats { grid-template-columns: repeat(2, 1fr); }
+      .stories-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .step-item[style*="span 2"] { grid-column: span 1 !important; }
+      .manifesto-box { padding: 26px 20px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- TOP BAR -->
-  <div class="top-bar">
-    <span class="top-badge">RESMİ BİLDİRİ</span>
-    <span>19 Kasım 2026 Ankara Basın Açıklaması ve 12 Maddelik Eylem Planı Yayınlanmıştır.</span>
-    <a href="./Basin_Bulteni_19112026.pdf" download="Fon_Magdurlari_Basin_Bulteni_19112026.pdf" style="color: #60a5fa; text-decoration: underline; margin-left: 8px;">PDF İndir &rarr;</a>
+  <!-- ACİL DUYURU BANDI -->
+  <div class="emergency-bar">
+    <div class="pulse-dot"></div>
+    <span>19 KASIM 2026 ANKARA DEKLARASYONU: 455 BİN TASARRUF SAHİBİ MECLİSE VE BAKANLIĞA SESLENİYOR!</span>
   </div>
 
   <!-- HEADER -->
   <header>
-    <div class="header-inner">
-      <a href="#" class="brand">
-        <img src="./logo.jpg" alt="Fon Mağdurları Hak Arama Platformu Logosu" class="brand-logo-img">
-        <div class="brand-text">
-          <h1>FON MAĞDURLARI</h1>
-          <span>Hak Arama ve Dayanışma Platformu</span>
-        </div>
-      </a>
-
-      <div class="header-actions">
-        <a class="btn-pdf-header" href="./Basin_Bulteni_19112026.pdf" target="_blank">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-            <polyline points="14 2 14 8 20 8"></polyline>
-            <line x1="16" y1="13" x2="8" y2="13"></line>
-            <line x1="16" y1="17" x2="8" y2="17"></line>
-          </svg>
-          Basın Bülteni (PDF)
-        </a>
+    <a href="#" class="brand">
+      <img src="./logo.jpg" alt="Fon Mağdurları Hak Arama Platformu" class="brand-logo">
+      <div class="brand-titles">
+        <h1>FON MAĞDURLARI</h1>
+        <span>Hak Arama ve Dayanışma Platformu</span>
       </div>
-    </div>
+    </a>
+
+    <a class="btn-header-pdf" href="./Basin_Bulteni_19112026.pdf" download="Fon_Magdurlari_Basin_Bulteni_19112026.pdf">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+        <polyline points="14 2 14 8 20 8"></polyline>
+        <line x1="16" y1="13" x2="8" y2="13"></line>
+        <line x1="16" y1="17" x2="8" y2="17"></line>
+      </svg>
+      Basın Dosyasını İndir (PDF)
+    </a>
   </header>
 
   <!-- MAIN -->
   <main>
-    <!-- HERO -->
-    <div class="hero-grid">
-      <div class="hero-left">
-        <span class="mega-tagline">Tasarruf Sahipsiz Değildir</span>
-        <h2 class="hero-title">
-          Birikimlerimize Erişim,<br>
-          <span>Kayıplarımıza Çözüm İstiyoruz!</span>
-        </h2>
 
-        <div class="hero-quote">
-          "Nasıl ki altın alan bir yurttaş altının değer kaybetme riskini üstlenirken kendisine bizzat devletin darphanesinden sahte altın satılmasını kabul etmiş olmuyorsa; bizler de fonlarımızdaki kıymetlerin denetimsizlik ve usulsüzlüklerle buharlaştırılmasına rıza göstermedik!"
-        </div>
-
-        <p class="hero-desc">
-          Bizler devletine güvenen, Cumhurbaşkanlığı ve ekonomi yönetiminin çağrıları doğrultusunda resmi finansal sisteme tasarruflarını emanet eden yurttaşlarız. Bugün Anayasa’nın 125. maddesi gereğince idarenin sorumluluğunu yerine getirmesini; net anaparanın ve enflasyon farkının eksiksiz karşılanmasını talep ediyoruz.
-        </p>
+    <!-- MANİFESTO & ÇIĞLIK HERO -->
+    <div class="manifesto-box">
+      <div class="badge-tag">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 10v4h2v-4h-2zm0 6v2h2v-2h-2z"/></svg>
+        HAK ARAMA VE DİRENİŞ MANİFESTOSU
       </div>
 
-      <!-- ACTION CARD -->
-      <div class="action-card">
-        <img src="./logo.jpg" alt="Platform Logosu" style="width: 96px; height: 96px; border-radius: 50%; margin: 0 auto 16px; display: block; border: 3px solid #0284c7; box-shadow: 0 6px 24px rgba(37, 99, 235, 0.35); background: #ffffff; object-fit: cover;">
-        <span class="action-date-tag">19.11.2026 · ANKARA DEKLARASYONU</span>
-        <h3 class="action-title">Resmi Basın Dosyası</h3>
-        <p class="action-desc">
-          TBMM ve yetkili makamlara sunulmak üzere hazırlanan 6 sayfalık gerekçeli deklarasyon ve talep dosyası.
-        </p>
+      <h2 class="main-slogan">
+        Bu Bir Yatırım Zararı Değil,<br>
+        Devlet Gözetiminde <span class="highlight">Buharlaştırılan Hayatlardır!</span>
+      </h2>
 
-        <a class="btn-download-pdf" href="./Basin_Bulteni_19112026.pdf" download="Fon_Magdurlari_Hak_Arama_Basin_Bulteni.pdf">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <div class="manifesto-quote">
+        "Nasıl ki resmi darphaneden sahte altın alan bir yurttaşa 'altının fiyatı düşebilirdi, bu senin riskin' denilemezse; bizzat SPK ve devlet kurumlarının denetimindeki fonlara yatırılan helal alın terinin usulsüzlüklerle yok edilmesine de 'borsa riski' denilemez!"
+      </div>
+
+      <p class="manifesto-text">
+        Bizler dövize, faize ya da kayıt dışına kaçmayıp; Cumhurbaşkanlığı ve Ekonomi Yönetiminin çağrısıyla <strong>resmi sermaye piyasalarına</strong> tasarrufunu emanet eden <strong>455 bin yurttaşız.</strong><br>
+        Bugün ne şirketler ne de yetkililer muhatap buluyor. Tasfiye kılıfı altında paralarımız rehin tutulurken; evlatlarımızın rızkı, emeklilik birikimleri ve ameliyat paraları bir gecede eritildi. Sessiz kalmayacağız!
+      </p>
+
+      <div class="hero-action-row">
+        <a class="btn-main-action" href="./Basin_Bulteni_19112026.pdf" download="Fon_Magdurlari_Hak_Arama_Basin_Bulteni.pdf">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
           </svg>
-          Basın Bültenini İndir (PDF)
+          19 Kasım Ankara Basın Deklarasyonunu İndir
         </a>
 
-        <a class="btn-spaces" href="https://x.com/i/spaces/1pekJAMovmbadL/peek" target="_blank" rel="noopener noreferrer">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <a class="btn-space-action" href="https://x.com/i/spaces/1pekJAMovmbadL/peek" target="_blank" rel="noopener noreferrer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
           </svg>
-          X (Twitter) Canlı Yayın Odası
+          X (Twitter) Canlı Hak Arama Odası
         </a>
       </div>
     </div>
 
-    <!-- STATS STRIP -->
-    <div class="stats-strip">
-      <div class="stat-card">
-        <div class="stat-num red">455.758+</div>
-        <div class="stat-lbl">Doğrudan Etkilenen Tasarruf Sahibi</div>
+    <!-- RAKAMLAR VE YIKIM STRIP -->
+    <div class="tragedy-stats">
+      <div class="t-card">
+        <div class="t-num red">455.758+</div>
+        <div class="t-lbl">Doğrudan Mağdur Edilen Tasarruf Sahibi</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-num blue">581 Milyar ₺</div>
-        <div class="stat-lbl">Bir Ayda Fonlarda Buharlaşan Büyüklük</div>
+      <div class="t-card">
+        <div class="t-num gold">581 Milyar ₺</div>
+        <div class="t-lbl">Fonlarda Buharlaştırılan Alın Teri</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-num red">173 Milyar $</div>
-        <div class="stat-lbl">Borsa Şirketlerinde Oluşan Güven Kaybı</div>
+      <div class="t-card">
+        <div class="t-num cyan">~2 Milyon</div>
+        <div class="t-lbl">Enkaza Sürüklenen Aile Bireyi</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-num gold">~2 Milyon</div>
-        <div class="stat-lbl">Aileleriyle Birlikte Etkilenen Yurttaş</div>
-      </div>
-    </div>
-
-    <!-- CRISIS & PRIMARY DEMAND VURGUSU (ASIL MESELE ANAPARA + TÜFE) -->
-    <div class="crisis-card">
-      <span class="crisis-badge">ASIL VE VAZGEÇİLMEZ TALEP</span>
-      <h3>Bu Bir Piyasa Riski Değildir; Alın Terimizin ve Geleceğimizin Gasp Edilmesidir!</h3>
-      <p>
-        Yüz binlerce yurttaş; devletine, Cumhurbaşkanlığına ve Hazine-Maliye yönetiminin <em>"birikimlerinizi kayıtlı finansal sistemde değerlendirin"</em> çağrılarına güvenerek emeklilik ikramiyelerini, evlatlarının eğitim bütçelerini, ev peşinatlarını ve tedavi masraflarını bizzat <strong>SPK gözetimindeki yasal fonlara</strong> emanet etmiştir.
-      </p>
-      <p>
-        Ortada ticari bir yatırım zararı veya öngörülebilir borsa dalgalanması yoktur; denetim zafiyetlerinden faydalanan usulsüzlüklerle yüz binlerce ailenin hayatı karartılmış, insanlar intiharın eşiğine sürüklenmiştir. Mağduriyet hiçbir surette yıllara yayılan sürüncemeli tasfiye süreçlerine terk edilemez!
-      </p>
-      <div class="crisis-highlight">
-        KIRMIZI ÇİZGİMİZ: Her bir hak sahibinin NET ANAPARASI, paranın sistemde kilitlendiği ilk günden ödeme gününe kadar hesaplanacak TÜFE (enflasyon) farkıyla birlikte EKSİKSİZ VE PEŞİN olarak karşılanmalıdır! Stopaj iadesi ve el konulan varlıklar yalnızca devletin bu ödemeleri gerçekleştirmesi için kaynak önerilerimizdir; yatırımcının tek ve tartışmasız hakkı net anaparasını kuruşu kuruşuna geri almaktır.
+      <div class="t-card">
+        <div class="t-num red">0 GÜN</div>
+        <div class="t-lbl">Açıklanan Resmi Ödeme Takvimi (Kapı Duvar!)</div>
       </div>
     </div>
 
-    <!-- DEMANDS SECTION (5 ACİL TALEP) -->
-    <div class="demands-section">
-      <div class="section-header">
-        <h2>Yetkili Kurumlardan 5 Acil Adım</h2>
-        <p>Sermaye piyasalarına ve devlet güvencesine güvenin tesisi için kaçınılmaz zorunluluklar:</p>
+    <!-- KIRMIZI ÇİZGİ ASIL TALEP KARTI -->
+    <div class="primary-demand-banner">
+      <span class="demand-badge">TARTIŞMASIZ KIRMIZI ÇİZGİMİZ</span>
+      <h2>Lütuf Değil, Alın Terimizi İstiyoruz!</h2>
+      <p>
+        Mağduriyeti 5-10 yıla yayılacak bir tasfiye masalına hapsetmeye çalışanlara cevabımız nettir. Biz borç para istemiyoruz; devletin resmi kurumunun denetimi altında gasp edilen kendi paramızı istiyoruz. Stopaj iadeleri veya el konulan malvarlıkları devlete teknik kaynak önerimizdir; bizim muhatabımız doğrudan net anaparamızdır.
+      </p>
+      <div class="red-demand-box">
+        ASIL VE TEK ŞART: Hak sahiplerinin <span>NET ANAPARASI</span>, sistemde paranın kilitlendiği ilk günden ödeme gününe kadar hesaplanacak <span>TÜFE (ENFLASYON) FARKIYLA</span> birlikte <span>EKSİKSİZ VE PEŞİN</span> olarak ödenecektir!
+      </div>
+    </div>
+
+    <!-- SAHADAN ÇIĞLIKLAR (GERÇEK DERT) -->
+    <div class="victim-stories">
+      <div class="section-title-dram">
+        <span>●</span> Sahadan Yükselen Çığlıklar: Bu Rakam Değil, İnsan Hayatı!
+      </div>
+      <p class="section-sub-dram">Her bir rakamın arkasında yıkılan yuvalar, iptal edilen tedaviler ve çalınan gelecekler var:</p>
+
+      <div class="stories-grid">
+        <div class="story-card">
+          <p>"30 yıllık öğretmenlik ikramiyemi, çocuğumun üniversite harcını 'en güvenli liman' denilen resmi fonlara yatırdım. 20 gündür bir kuruş çekemiyorum, evladımın yüzüne bakamıyorum!"</p>
+          <div class="story-author">Emekli Öğretmen <span>· Ankara</span></div>
+        </div>
+
+        <div class="story-card">
+          <p>"Babamın kanser ameliyatı için kenara koyduğumuz para Tera'nın kilitli fonlarında rehin kaldı. Hastane gün veriyor, biz aracı kurumdan tek bir muhatap bulamıyoruz. Bunun hesabını kim verecek?"</p>
+          <div class="story-author">Sağlık Mağduru <span>· İstanbul</span></div>
+        </div>
+
+        <div class="story-card">
+          <p>"Bize 'devletin arkasında olduğu fonlar' dediler. Şimdi kimse sorumluluk almıyor. İntiharın eşiğine gelen insanlar var. Biz sadaka değil, helal alın terimizi istiyoruz!"</p>
+          <div class="story-author">Esnaf / Tasarruf Sahibi <span>· İzmir</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5 ACİL ADIM -->
+    <div class="five-steps">
+      <div class="section-title-dram" style="margin-bottom: 20px;">
+        <span>●</span> Yetkili Kurumlardan 5 Acil Adım
       </div>
 
-      <div class="demands-grid">
-        <div class="demand-item">
-          <h4>1. Net Anapara & TÜFE Farkı</h4>
-          <p>Tüm fonlarda hak sahiplerinin net anapara tutarları, TÜFE esas alınarak hesaplanacak satın alma gücü kaybıyla birlikte eksiksiz ve koşulsuz karşılanmalıdır.</p>
+      <div class="steps-grid">
+        <div class="step-item">
+          <div class="step-header">
+            <div class="step-num-circle">1</div>
+            <h4>Net Anapara & TÜFE Farkı</h4>
+          </div>
+          <p>Tüm fonlarda hak sahiplerinin net anapara tutarları, TÜFE esas alınarak satın alma gücü kaybıyla birlikte eksiksiz ve peşin karşılanmalıdır.</p>
         </div>
-        <div class="demand-item">
-          <h4>2. Bağlayıcı ve Kesin Ödeme Takvimi</h4>
-          <p>Ödeme günlerini, kaynak yöntemini ve aşamalarını gösteren, uygulanması devlet güvencesiyle taahhüt edilmiş resmi takvim ivedilikle kamuoyuna ilan edilmelidir.</p>
+
+        <div class="step-item">
+          <div class="step-header">
+            <div class="step-num-circle">2</div>
+            <h4>Bağlayıcı ve Kesin Ödeme Takvimi</h4>
+          </div>
+          <p>Ödeme günlerini, kaynak yöntemini ve takvimini gösteren devlet taahhütlü resmi takvim derhâl kamuoyuna ilan edilmelidir.</p>
         </div>
-        <div class="demand-item">
-          <h4>3. Kilitli ve Rehin Fonların Derhal Açılması</h4>
-          <p>Tera Portföy'ün 15 fonu (TMV, TMM, TRJ, FSU vb.) ile Pusula, Bulls ve Alnus nezdinde haftalardır rehin tutulan ara ödemelerin durumu derhâl açıklanmalı ve blokajlar kaldırılmalıdır.</p>
+
+        <div class="step-item">
+          <div class="step-header">
+            <div class="step-num-circle">3</div>
+            <h4>Kilitli Fonların Açılması</h4>
+          </div>
+          <p>Tera Portföy'ün 15 fonu (TMV, TMM, TRJ vb.) ile Pusula, Bulls ve Alnus nezdinde rehin kalan ara ödemelerin durumu derhâl açıklanmalıdır.</p>
         </div>
-        <div class="demand-item">
-          <h4>4. Hazine Desteği & "Clawback" (Varlıkların Geri Çağrılması)</h4>
-          <p>Mağduriyet yıllarca sürecek tasfiyeye bırakılamaz; Hazine finansmanı sağlanmalı ve usulsüzlükle ilişkili şirketlere aktarılan tüm varlıklar kamu gücüyle derhal geri çağrılmalıdır.</p>
+
+        <div class="step-item">
+          <div class="step-header">
+            <div class="step-num-circle">4</div>
+            <h4>Hazine Desteği & Varlıkların Geri Çağrılması</h4>
+          </div>
+          <p>Mağduriyet yıllarca sürecek tasfiyeye bırakılamaz; Hazine finansmanı sağlanmalı ve usulsüz aktarılan varlıklar kamu gücüyle geri çağrılmalıdır.</p>
         </div>
-        <div class="demand-item" style="grid-column: span 2;">
-          <h4>5. Stopaj ve Kamu Kaynaklarının Fonlara İadesi</h4>
-          <p>Yatırımcılardan kesilerek Hazineye aktarılan stopaj tutarları ile el konulan fon varlıkları, hak sahiplerine yapılacak anapara ve enflasyon ödemelerine doğrudan kaynak olarak ilgili fonlara aktarılmalıdır.</p>
+
+        <div class="step-item" style="grid-column: span 2;">
+          <div class="step-header">
+            <div class="step-num-circle">5</div>
+            <h4>Stopaj ve Kamu Kaynaklarının Fonlara İadesi</h4>
+          </div>
+          <p>Yatırımcılardan kesilerek Hazineye aktarılan stopaj tutarları, hak sahiplerine yapılacak anapara ve enflasyon ödemelerine doğrudan kaynak olarak aktarılmalıdır.</p>
         </div>
       </div>
     </div>
@@ -631,7 +697,9 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2026 FON MAĞDURLARI HAK ARAMA PLATFORMU · fonder.org.tr</p>
+    <p><strong>FON MAĞDURLARI HAK ARAMA VE DAYANIŞMA PLATFORMU</strong></p>
+    <p>Bu platform hiçbir ticari amaç gütmemektedir; anayasal tasarruf hakkını arayan 455.000 yurttaşın ortak sesidir.</p>
+    <p>© 2026 fonder.org.tr · Tasarruf Sahipsiz Değildir!</p>
   </footer>
 
 </body>
