@@ -3,28 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FONDER | Fon Mağdurları Dayanışma Derneği</title>
-  <meta name="description" content="FONDER - Fon Mağdurları Dayanışma Derneği Resmi Portalı. Tasarruf sahipsiz değildir, haklarımız için tek ses.">
+  <title>FON MAĞDURLARI HAK ARAMA PLATFORMU | fonder.org.tr</title>
+  <meta name="description" content="Fon Mağdurları Hak Arama Platformu Resmi Portalı. Birikimlerimize erişim, kayıplarımıza çözüm istiyoruz: Anapara, TÜFE farkı ve stopaj iadeleri eksiksiz ödenmelidir.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #090a0f;
-      --card-bg: rgba(255, 255, 255, 0.03);
-      --border: rgba(255, 255, 255, 0.08);
-      --accent: #3b82f6;
-      --accent-glow: rgba(59, 130, 246, 0.25);
+      --bg: #07090e;
+      --card-bg: rgba(255, 255, 255, 0.035);
+      --border: rgba(255, 255, 255, 0.09);
+      --accent: #2563eb;
+      --accent-glow: rgba(37, 99, 235, 0.35);
       --red: #ef4444;
+      --gold: #f59e0b;
       --text: #f8fafc;
       --muted: #94a3b8;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       background-color: var(--bg);
@@ -34,16 +31,41 @@
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.12) 0%, transparent 60%),
-        radial-gradient(circle at 10% 40%, rgba(239, 68, 68, 0.05) 0%, transparent 40%);
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.18) 0%, transparent 65%),
+        radial-gradient(circle at 10% 30%, rgba(239, 68, 68, 0.08) 0%, transparent 45%);
+    }
+
+    /* TOP NOTIFICATION BAR */
+    .top-bar {
+      background: linear-gradient(90deg, #1e1b4b, #0f172a);
+      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .top-badge {
+      background: #dc2626;
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
 
     /* HEADER */
     header {
       width: 100%;
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 24px 20px;
+      padding: 22px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -53,322 +75,385 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
       text-decoration: none;
       color: var(--text);
     }
 
     .brand-icon {
-      width: 40px;
-      height: 40px;
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, #1d4ed8, #0284c7);
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 14px var(--accent-glow);
+      box-shadow: 0 4px 16px var(--accent-glow);
     }
 
-    .brand-icon svg {
-      width: 22px;
-      height: 22px;
-      fill: #ffffff;
-    }
+    .brand-icon svg { width: 24px; height: 24px; fill: #ffffff; }
 
     .brand-text h1 {
-      font-size: 19px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: -0.3px;
       line-height: 1.1;
     }
 
     .brand-text span {
       font-size: 11px;
-      color: var(--muted);
-      font-weight: 600;
-      letter-spacing: 0.5px;
+      color: #38bdf8;
+      font-weight: 700;
+      letter-spacing: 0.8px;
       text-transform: uppercase;
     }
 
-    .header-tag {
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn-pdf-header {
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 6px 14px;
-      background: rgba(239, 68, 68, 0.1);
-      border: 1px solid rgba(239, 68, 68, 0.3);
-      border-radius: 999px;
-      font-size: 12px;
+      background: rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      color: #93c5fd;
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 13px;
       font-weight: 700;
-      color: #f87171;
+      text-decoration: none;
+      transition: all 0.2s;
     }
 
-    .pulse-dot {
-      width: 8px;
-      height: 8px;
-      background-color: var(--red);
-      border-radius: 50%;
-      animation: pulse 1.8s infinite;
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
-      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
-      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+    .btn-pdf-header:hover {
+      background: #2563eb;
+      color: #ffffff;
+      transform: translateY(-1px);
     }
 
     /* MAIN CONTAINER */
     main {
       width: 100%;
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 60px 20px 80px;
+      padding: 50px 20px 80px;
+    }
+
+    /* HERO SECTION */
+    .hero-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 50px;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 45px;
       align-items: center;
+      margin-bottom: 60px;
     }
 
-    /* HERO LEFT */
-    .mega-headline {
-      font-size: 52px;
-      font-weight: 900;
-      line-height: 1.08;
-      letter-spacing: -1.5px;
-      text-transform: uppercase;
-      color: #ffffff;
-      margin-bottom: 22px;
-      text-shadow: 0 8px 30px rgba(239, 68, 68, 0.28);
-    }
-
-    .mega-headline mark {
-      background: linear-gradient(135deg, #ef4444, #dc2626);
-      color: #ffffff;
-      padding: 2px 14px;
-      border-radius: 10px;
+    .mega-tagline {
       display: inline-block;
-      box-shadow: 0 8px 24px rgba(239, 68, 68, 0.35);
-    }
-
-    .hero-badge {
-      display: inline-block;
-      padding: 6px 14px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border);
+      padding: 5px 14px;
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.35);
       border-radius: 999px;
-      font-size: 13px;
-      font-weight: 600;
-      color: #60a5fa;
+      color: #f87171;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
       margin-bottom: 18px;
     }
 
     .hero-title {
-      font-size: 36px;
-      font-weight: 800;
-      line-height: 1.18;
-      letter-spacing: -1px;
-      margin-bottom: 20px;
+      font-size: 44px;
+      font-weight: 900;
+      line-height: 1.12;
+      letter-spacing: -1.2px;
+      color: #ffffff;
+      margin-bottom: 22px;
     }
 
     .hero-title span {
-      background: linear-gradient(135deg, #60a5fa, #3b82f6);
+      background: linear-gradient(135deg, #60a5fa, #38bdf8);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .hero-desc {
-      font-size: 17px;
-      line-height: 1.6;
-      color: var(--muted);
-      margin-bottom: 36px;
-    }
-
-    .principles {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-bottom: 40px;
-    }
-
-    .principle-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
+    .hero-quote {
+      background: rgba(255, 255, 255, 0.03);
+      border-left: 4px solid #38bdf8;
+      border-radius: 0 10px 10px 0;
+      padding: 16px 20px;
+      margin-bottom: 28px;
       font-size: 15px;
-      font-weight: 600;
-      color: #e2e8f0;
+      font-style: italic;
+      color: #cbd5e1;
+      line-height: 1.6;
     }
 
-    .principle-item svg {
-      width: 20px;
-      height: 20px;
-      fill: #3b82f6;
-      flex-shrink: 0;
+    .hero-desc {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--muted);
+      margin-bottom: 30px;
     }
 
-    /* RIGHT CARD (SPACES / ACTION) */
-    .action-card {
-      background: rgba(18, 22, 34, 0.7);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 28px;
-      padding: 36px 28px;
+    /* STATS STRIP */
+    .stats-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 50px;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 18px;
       text-align: center;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      transition: transform 0.2s;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(59, 130, 246, 0.3);
+    }
+
+    .stat-num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #ffffff;
+      margin-bottom: 4px;
+      letter-spacing: -0.5px;
+    }
+
+    .stat-num.red { color: #f87171; }
+    .stat-num.blue { color: #38bdf8; }
+    .stat-num.gold { color: #fbbf24; }
+
+    .stat-lbl {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    /* RIGHT ACTION CARD */
+    .action-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      padding: 32px 26px;
+      text-align: center;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
       position: relative;
     }
 
     .action-card::before {
       content: "";
       position: absolute;
-      top: -1px; left: 20%; right: 20%;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.6), transparent);
+      top: -1px; left: 15%; right: 15%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #38bdf8, transparent);
     }
 
-    .action-badge {
-      display: inline-block;
+    .action-date-tag {
       font-size: 11px;
       font-weight: 800;
       letter-spacing: 0.8px;
       text-transform: uppercase;
-      color: #60a5fa;
-      background: rgba(59, 130, 246, 0.1);
-      border: 1px solid rgba(59, 130, 246, 0.3);
-      padding: 5px 12px;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 4px 12px;
       border-radius: 999px;
-      margin-bottom: 16px;
+      display: inline-block;
+      margin-bottom: 14px;
     }
 
-    .card-title {
+    .action-title {
       font-size: 20px;
-      font-weight: 700;
-      margin-bottom: 6px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 8px;
     }
 
-    .card-subtitle {
+    .action-desc {
       font-size: 13px;
       color: var(--muted);
       margin-bottom: 24px;
+      line-height: 1.5;
     }
 
-    .qr-frame {
-      background: #ffffff;
-      padding: 16px;
-      border-radius: 20px;
-      display: inline-block;
-      margin-bottom: 24px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-      position: relative;
-    }
-
-    .qr-frame img {
-      width: 200px;
-      height: 200px;
-      display: block;
-      border-radius: 8px;
-    }
-
-    .btn-main {
+    .btn-download-pdf {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 12px;
       width: 100%;
-      background: #ffffff;
-      color: #09090b;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
       text-decoration: none;
       padding: 16px 20px;
       border-radius: 14px;
       font-size: 15px;
-      font-weight: 700;
-      transition: all 0.2s ease;
-      margin-bottom: 12px;
+      font-weight: 800;
+      transition: all 0.2s;
+      box-shadow: 0 8px 24px var(--accent-glow);
+      margin-bottom: 14px;
     }
 
-    .btn-main:hover {
-      background: #f1f5f9;
+    .btn-download-pdf:hover {
+      background: linear-gradient(135deg, #1d4ed8, #1e40af);
       transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.5);
     }
 
-    .btn-main svg {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
-    }
-
-    .btn-secondary {
+    .btn-spaces {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
       width: 100%;
-      background: transparent;
-      color: var(--muted);
+      background: rgba(255, 255, 255, 0.05);
+      color: #e2e8f0;
       border: 1px solid var(--border);
       text-decoration: none;
       padding: 12px 20px;
       border-radius: 14px;
-      font-size: 13px;
-      font-weight: 600;
-      transition: all 0.2s ease;
+      font-size: 13.5px;
+      font-weight: 700;
+      transition: all 0.2s;
     }
 
-    .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.05);
+    .btn-spaces:hover {
+      background: rgba(255, 255, 255, 0.1);
       color: #ffffff;
+    }
+
+    /* HIGHLIGHT BOX (UGUR BEY'S STOPAJ FOCUS) */
+    .highlight-card {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(15, 23, 42, 0.6));
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      border-radius: 20px;
+      padding: 28px 32px;
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    .highlight-badge {
+      display: inline-block;
+      background: #f59e0b;
+      color: #0f172a;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    .highlight-card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #fbbf24;
+      margin-bottom: 12px;
+    }
+
+    .highlight-card p {
+      font-size: 14.5px;
+      color: #e2e8f0;
+      line-height: 1.7;
+    }
+
+    /* DEMANDS SECTION */
+    .demands-section {
+      margin-bottom: 60px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .section-header h2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .section-header p {
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .demands-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .demand-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 24px;
+    }
+
+    .demand-item h4 {
+      font-size: 16px;
+      font-weight: 800;
+      color: #38bdf8;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .demand-item p {
+      font-size: 13.5px;
+      color: #cbd5e1;
+      line-height: 1.6;
     }
 
     /* FOOTER */
     footer {
       width: 100%;
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
       padding: 30px 20px;
       border-top: 1px solid var(--border);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
       text-align: center;
       color: var(--muted);
-      font-size: 13px;
-    }
-
-    .tags {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .tag-item {
-      font-size: 12px;
-      font-weight: 600;
-      color: #94a3b8;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border);
-      padding: 4px 10px;
-      border-radius: 6px;
+      font-size: 12.5px;
     }
 
     @media (max-width: 860px) {
-      main {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        padding-top: 30px;
-      }
-      .mega-headline {
-        font-size: 36px;
-      }
-      .hero-title {
-        font-size: 28px;
-      }
+      .hero-grid { grid-template-columns: 1fr; gap: 35px; }
+      .stats-strip { grid-template-columns: repeat(2, 1fr); }
+      .demands-grid { grid-template-columns: 1fr; }
+      .hero-title { font-size: 32px; }
     }
   </style>
 </head>
 <body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <span class="top-badge">RESMİ BİLDİRİ</span>
+    <span>19 Kasım 2026 Ankara Basın Açıklaması ve 12 Maddelik Eylem Planı Yayınlanmıştır.</span>
+    <a href="./Basin_Bulteni_19112026.pdf" download="Fon_Magdurlari_Basin_Bulteni_19112026.pdf" style="color: #60a5fa; text-decoration: underline; margin-left: 8px;">PDF İndir &rarr;</a>
+  </div>
 
   <!-- HEADER -->
   <header>
@@ -379,87 +464,132 @@
         </svg>
       </div>
       <div class="brand-text">
-        <h1>FONDER</h1>
-        <span>Fon Mağdurları Dayanışma Derneği</span>
+        <h1>FON MAĞDURLARI</h1>
+        <span>Hak Arama ve Dayanışma Platformu</span>
       </div>
     </a>
 
-    <div class="header-tag">
-      <span class="pulse-dot"></span>
-      X CANLI SOHBET ODASI
+    <div class="header-actions">
+      <a class="btn-pdf-header" href="./Basin_Bulteni_19112026.pdf" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+        </svg>
+        Basın Bülteni (PDF)
+      </a>
     </div>
   </header>
 
   <!-- MAIN -->
   <main>
-    <!-- LEFT: HERO & PRINCIPLES -->
-    <div class="hero-content">
-      <div class="mega-headline">
-        MİLYONLARCA FON MAĞDURU<br>
-        <mark>HAKKINI ARIYOR</mark>
+    <!-- HERO -->
+    <div class="hero-grid">
+      <div class="hero-left">
+        <span class="mega-tagline">Tasarruf Sahipsiz Değildir</span>
+        <h2 class="hero-title">
+          Birikimlerimize Erişim,<br>
+          <span>Kayıplarımıza Çözüm İstiyoruz!</span>
+        </h2>
+
+        <div class="hero-quote">
+          "Nasıl ki altın alan bir yurttaş altının değer kaybetme riskini üstlenirken kendisine bizzat devletin darphanesinden sahte altın satılmasını kabul etmiş olmuyorsa; bizler de fonlarımızdaki kıymetlerin denetimsizlik ve usulsüzlüklerle buharlaştırılmasına rıza göstermedik!"
+        </div>
+
+        <p class="hero-desc">
+          Bizler devletine güvenen, Cumhurbaşkanlığı ve ekonomi yönetiminin çağrıları doğrultusunda resmi finansal sisteme tasarruflarını emanet eden yurttaşlarız. Bugün Anayasa’nın 125. maddesi gereğince idarenin sorumluluğunu yerine getirmesini; net anaparanın ve enflasyon farkının eksiksiz karşılanmasını talep ediyoruz.
+        </p>
       </div>
-      <div class="hero-badge">Tasarruf Sahipsiz Değildir</div>
-      <h2 class="hero-title">
-        Haklarımız, Alın Terimiz ve<br>
-        <span>Geleceğimiz İçin Tek Ses.</span>
-      </h2>
-      <p class="hero-desc">
-        Sermaye piyasalarında tasarruflarını değerlendiren küçük yatırımcıların, emeklilerin ve vatandaşlarımızın haklarını korumak amacıyla bir aradayız. FONDER; fon süreçlerinde yaşanan belirsizlikleri çözmek, meşru haklarımızı ilgili kurumlar nezdinde savunmak ve dayanışmayı büyütmek için kurulmuş bağımsız bir sivil toplum hareketidir.
+
+      <!-- ACTION CARD -->
+      <div class="action-card">
+        <span class="action-date-tag">19.11.2026 · ANKARA DEKLARASYONU</span>
+        <h3 class="action-title">Resmi Basın Dosyası</h3>
+        <p class="action-desc">
+          Platformumuzun yetkili makamlara ve TBMM'ye ilettiği 6 sayfalık gerekçeli deklarasyon ve talep raporu.
+        </p>
+
+        <a class="btn-download-pdf" href="./Basin_Bulteni_19112026.pdf" download="Fon_Magdurlari_Hak_Arama_Basin_Bulteni.pdf">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Basın Bültenini İndir (PDF)
+        </a>
+
+        <a class="btn-spaces" href="https://x.com/i/spaces/1pekJAMovmbadL/peek" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
+          </svg>
+          X (Twitter) Canlı Yayın Odası
+        </a>
+      </div>
+    </div>
+
+    <!-- STATS STRIP -->
+    <div class="stats-strip">
+      <div class="stat-card">
+        <div class="stat-num red">455.758+</div>
+        <div class="stat-lbl">Doğrudan Etkilenen Tasarruf Sahibi</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num blue">581 Milyar ₺</div>
+        <div class="stat-lbl">Bir Ayda Fonlarda Buharlaşan Büyüklük</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num red">173 Milyar $</div>
+        <div class="stat-lbl">Borsa Şirketlerinde Oluşan Güven Kaybı</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num gold">%100</div>
+        <div class="stat-lbl">Net Anapara ve TÜFE Farkı Talebi</div>
+      </div>
+    </div>
+
+    <!-- UGUR BEY'S CRITICAL STOPAJ PARAGRAPH HIGHLIGHT -->
+    <div class="highlight-card">
+      <span class="highlight-badge">ÖNCELİKLİ KAYNAK TALEBİ</span>
+      <h3>Stopaj Tutarları Fonlara ve Yatırımcılara İade Edilmelidir!</h3>
+      <p>
+        "Tasfiye kapsamındaki fonların işlemleri nedeniyle yatırımcılardan kesilerek Hazineye aktarılan stopaj tutarları, mağduriyetlerin giderilmesinde kullanılmak üzere ilgili fonlara iade edilmelidir. İade edilen tutarlar, hak sahiplerine yapılacak anapara ve enflasyon farkı ödemelerine kaynak olarak aktarılmalı; bu tutarların fonlara ve yatırımcılara nasıl yansıtıldığı açıkça gösterilmelidir. Mağduriyetleri gidermek amacıyla yapılacak ödemelerin yeni vergi kesintileriyle eksilmemesini sağlayacak düzenlemeler de ivedilikle yapılmalıdır."
       </p>
+    </div>
 
-      <div class="principles">
-        <div class="principle-item">
-          <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-          Her fona ve her mağdura ayrımsız %100 TAM ANAPARA
+    <!-- DEMANDS GRID -->
+    <div class="demands-section">
+      <div class="section-header">
+        <h2>Yetkili Kurumlardan 5 Acil Adım</h2>
+        <p>Sermaye piyasalarına ve devlet güvencesine güvenin tesisi için kaçınılmaz zorunluluklar:</p>
+      </div>
+
+      <div class="demands-grid">
+        <div class="demand-item">
+          <h4>1. Net Anapara & TÜFE Farkı</h4>
+          <p>Tüm fonlarda hak sahiplerinin net anapara tutarları, TÜFE esas alınarak hesaplanacak satın alma gücü kaybıyla birlikte eksiksiz karşılanmalıdır.</p>
         </div>
-        <div class="principle-item">
-          <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-          Geçen 60 gün ve enflasyon kaybı için RESMİ TÜFE FARKI
+        <div class="demand-item">
+          <h4>2. Bağlayıcı Ödeme Takvimi</h4>
+          <p>Ödeme günlerini, kaynak yöntemini ve aşamalarını gösteren uygulanması taahhüt edilmiş resmi takvim en geç 2026 yılı bitmeden kamuoyuna ilan edilmelidir.</p>
         </div>
-        <div class="principle-item">
-          <svg viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-          YTM ve TMSF masasında kurumsal ve hukuki temsil
+        <div class="demand-item">
+          <h4>3. Kilitli Fonların Açıklanması</h4>
+          <p>Tera Portföy'ün 15 fonu (TMV, TMM, TRJ, FSU vb.) ile Pusula, Bulls ve Alnus nezdinde 20 günü aşkın süredir rehin kalan ara ödemelerin durumu derhâl açıklanmalıdır.</p>
+        </div>
+        <div class="demand-item">
+          <h4>4. Hazine Desteği & "Clawback"</h4>
+          <p>Mağduriyet yalnızca yıllarca sürecek tasfiyeye bırakılamaz; Hazine finansmanı sağlanmalı ve usulsüzlükle haksız aktarılan varlıklar kamu gücüyle geri çağrılmalıdır.</p>
         </div>
       </div>
     </div>
 
-    <!-- RIGHT: ACTION & LIVE ROOM -->
-    <div class="action-card">
-      <span class="action-badge">X (Twitter) Canlı Yayın</span>
-      <h3 class="card-title">Canlı Bilgilendirme Odası</h3>
-      <p class="card-subtitle">Kameranızla QR kodu okutun veya tek tıkla sesli odaya katılın.</p>
-
-      <div class="qr-frame">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&data=https%3A%2F%2Fx.com%2Fi%2Fspaces%2F1pekJAMovmbadL%2Fpeek" alt="Canlı Yayın QR Kodu">
-      </div>
-
-      <a class="btn-main" href="https://x.com/i/spaces/1pekJAMovmbadL/peek" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24">
-          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path>
-        </svg>
-        Canlı Yayına Katıl (X Spaces)
-      </a>
-
-      <a class="btn-secondary" href="./broşür (A5).pdf" download="FONDER_Brosur_A5.pdf">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-          <polyline points="7 10 12 15 17 10"></polyline>
-          <line x1="12" y1="15" x2="12" y2="3"></line>
-        </svg>
-        Basılı El Broşürünü İndir (A5 PDF)
-      </a>
-    </div>
   </main>
 
   <!-- FOOTER -->
   <footer>
-    <div class="tags">
-      <span class="tag-item">Şeffaflık</span>
-      <span class="tag-item">Adalet</span>
-      <span class="tag-item">Meşru Hak Arayışı</span>
-      <span class="tag-item">fonder.org.tr</span>
-    </div>
-    <p>© 2026 FONDER - Fon Mağdurları Dayanışma Derneği. Tüm hakları saklıdır.</p>
+    <p>© 2026 FON MAĞDURLARI HAK ARAMA PLATFORMU · fonder.org.tr</p>
+    <p style="color: #64748b; font-size: 11.5px;">Resmi Basın İletişimi ve Meclis Hak Arama Koordinasyonu</p>
   </footer>
 
 </body>
