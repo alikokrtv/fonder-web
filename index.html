@@ -13,15 +13,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #07090e;
-      --card-bg: rgba(255, 255, 255, 0.035);
-      --border: rgba(255, 255, 255, 0.09);
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
       --accent: #2563eb;
-      --accent-glow: rgba(37, 99, 235, 0.35);
-      --red: #ef4444;
-      --gold: #f59e0b;
-      --text: #f8fafc;
-      --muted: #94a3b8;
+      --accent-glow: rgba(37, 99, 235, 0.2);
+      --red: #dc2626;
+      --gold: #d97706;
+      --text: #0f172a;
+      --muted: #475569;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -34,14 +34,15 @@
       overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.18) 0%, transparent 65%),
-        radial-gradient(circle at 10% 30%, rgba(239, 68, 68, 0.08) 0%, transparent 45%);
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.06) 0%, transparent 60%),
+        radial-gradient(circle at 10% 30%, rgba(239, 68, 68, 0.03) 0%, transparent 45%);
     }
 
     /* TOP NOTIFICATION BAR */
     .top-bar {
-      background: linear-gradient(90deg, #1e1b4b, #0f172a);
-      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+      background: #0f172a;
+      color: #ffffff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       padding: 10px 20px;
       text-align: center;
       font-size: 13px;
@@ -66,13 +67,23 @@
     /* HEADER */
     header {
       width: 100%;
-      max-width: 1180px;
+      background: #ffffff;
       margin: 0 auto;
-      padding: 22px 20px;
+      padding: 18px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.03);
+    }
+
+    .header-inner {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     .brand {
@@ -88,35 +99,23 @@
       height: 52px;
       border-radius: 50%;
       object-fit: cover;
-      box-shadow: 0 4px 16px var(--accent-glow);
-      border: 2px solid rgba(59, 130, 246, 0.6);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+      border: 2px solid #bae6fd;
       background: #ffffff;
       flex-shrink: 0;
     }
-
-    .brand-icon {
-      width: 44px;
-      height: 44px;
-      background: linear-gradient(135deg, #1d4ed8, #0284c7);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 16px var(--accent-glow);
-    }
-
-    .brand-icon svg { width: 24px; height: 24px; fill: #ffffff; }
 
     .brand-text h1 {
       font-size: 18px;
       font-weight: 900;
       letter-spacing: -0.3px;
       line-height: 1.1;
+      color: #0f172a;
     }
 
     .brand-text span {
       font-size: 11px;
-      color: #38bdf8;
+      color: #0284c7;
       font-weight: 700;
       letter-spacing: 0.8px;
       text-transform: uppercase;
@@ -132,9 +131,9 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      background: rgba(37, 99, 235, 0.15);
-      border: 1px solid rgba(59, 130, 246, 0.4);
-      color: #93c5fd;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1d4ed8;
       padding: 8px 16px;
       border-radius: 10px;
       font-size: 13px;
@@ -154,7 +153,7 @@
       width: 100%;
       max-width: 1180px;
       margin: 0 auto;
-      padding: 50px 20px 80px;
+      padding: 45px 20px 70px;
     }
 
     /* HERO SECTION */
@@ -163,55 +162,57 @@
       grid-template-columns: 1.25fr 0.75fr;
       gap: 45px;
       align-items: center;
-      margin-bottom: 60px;
+      margin-bottom: 50px;
     }
 
     .mega-tagline {
       display: inline-block;
       padding: 5px 14px;
-      background: rgba(239, 68, 68, 0.12);
-      border: 1px solid rgba(239, 68, 68, 0.35);
+      background: #fee2e2;
+      border: 1px solid #fecaca;
       border-radius: 999px;
-      color: #f87171;
-      font-size: 12.5px;
+      color: #b91c1c;
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 0.5px;
       text-transform: uppercase;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     .hero-title {
-      font-size: 44px;
+      font-size: 42px;
       font-weight: 900;
-      line-height: 1.12;
+      line-height: 1.14;
       letter-spacing: -1.2px;
-      color: #ffffff;
-      margin-bottom: 22px;
+      color: #0f172a;
+      margin-bottom: 20px;
     }
 
     .hero-title span {
-      background: linear-gradient(135deg, #60a5fa, #38bdf8);
+      background: linear-gradient(135deg, #1d4ed8, #0284c7);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero-quote {
-      background: rgba(255, 255, 255, 0.03);
-      border-left: 4px solid #38bdf8;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #0284c7;
       border-radius: 0 10px 10px 0;
       padding: 16px 20px;
-      margin-bottom: 28px;
-      font-size: 15px;
+      margin-bottom: 24px;
+      font-size: 14.5px;
       font-style: italic;
-      color: #cbd5e1;
+      color: #334155;
       line-height: 1.6;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
     }
 
     .hero-desc {
-      font-size: 16px;
+      font-size: 15.5px;
       line-height: 1.65;
       color: var(--muted);
-      margin-bottom: 30px;
+      margin-bottom: 26px;
     }
 
     /* STATS STRIP */
@@ -219,34 +220,36 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
-      margin-bottom: 50px;
+      margin-bottom: 45px;
     }
 
     .stat-card {
-      background: var(--card-bg);
+      background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 16px;
       padding: 22px 18px;
       text-align: center;
-      transition: transform 0.2s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      transition: transform 0.2s, box-shadow 0.2s;
     }
 
     .stat-card:hover {
       transform: translateY(-3px);
-      border-color: rgba(59, 130, 246, 0.3);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      border-color: #cbd5e1;
     }
 
     .stat-num {
       font-size: 28px;
       font-weight: 900;
-      color: #ffffff;
+      color: #0f172a;
       margin-bottom: 4px;
       letter-spacing: -0.5px;
     }
 
-    .stat-num.red { color: #f87171; }
-    .stat-num.blue { color: #38bdf8; }
-    .stat-num.gold { color: #fbbf24; }
+    .stat-num.red { color: #dc2626; }
+    .stat-num.blue { color: #0284c7; }
+    .stat-num.gold { color: #d97706; }
 
     .stat-lbl {
       font-size: 12px;
@@ -257,13 +260,12 @@
 
     /* RIGHT ACTION CARD */
     .action-card {
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
       border-radius: 24px;
       padding: 32px 26px;
       text-align: center;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
       position: relative;
     }
 
@@ -271,8 +273,9 @@
       content: "";
       position: absolute;
       top: -1px; left: 15%; right: 15%;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #38bdf8, transparent);
+      height: 3px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #1d4ed8, #0284c7);
     }
 
     .action-date-tag {
@@ -280,9 +283,9 @@
       font-weight: 800;
       letter-spacing: 0.8px;
       text-transform: uppercase;
-      color: #38bdf8;
-      background: rgba(56, 189, 248, 0.1);
-      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #0369a1;
+      background: #e0f2fe;
+      border: 1px solid #bae6fd;
       padding: 4px 12px;
       border-radius: 999px;
       display: inline-block;
@@ -292,14 +295,14 @@
     .action-title {
       font-size: 20px;
       font-weight: 800;
-      color: #ffffff;
+      color: #0f172a;
       margin-bottom: 8px;
     }
 
     .action-desc {
       font-size: 13px;
       color: var(--muted);
-      margin-bottom: 24px;
+      margin-bottom: 22px;
       line-height: 1.5;
     }
 
@@ -317,14 +320,14 @@
       font-size: 15px;
       font-weight: 800;
       transition: all 0.2s;
-      box-shadow: 0 8px 24px var(--accent-glow);
-      margin-bottom: 14px;
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.3);
+      margin-bottom: 12px;
     }
 
     .btn-download-pdf:hover {
       background: linear-gradient(135deg, #1d4ed8, #1e40af);
       transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.5);
+      box-shadow: 0 10px 24px rgba(37, 99, 235, 0.4);
     }
 
     .btn-spaces {
@@ -333,9 +336,9 @@
       justify-content: center;
       gap: 8px;
       width: 100%;
-      background: rgba(255, 255, 255, 0.05);
-      color: #e2e8f0;
-      border: 1px solid var(--border);
+      background: #f1f5f9;
+      color: #0f172a;
+      border: 1px solid #cbd5e1;
       text-decoration: none;
       padding: 12px 20px;
       border-radius: 14px;
@@ -345,24 +348,25 @@
     }
 
     .btn-spaces:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: #ffffff;
+      background: #e2e8f0;
+      color: #0f172a;
     }
 
-    /* HIGHLIGHT BOX (UGUR BEY'S STOPAJ FOCUS) */
+    /* HIGHLIGHT BOX (STOPAJ FOCUS) */
     .highlight-card {
-      background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(15, 23, 42, 0.6));
-      border: 1px solid rgba(245, 158, 11, 0.4);
+      background: #fffbeb;
+      border: 1px solid #fde68a;
       border-radius: 20px;
-      padding: 28px 32px;
-      margin-bottom: 50px;
+      padding: 26px 30px;
+      margin-bottom: 45px;
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.05);
       position: relative;
     }
 
     .highlight-badge {
       display: inline-block;
       background: #f59e0b;
-      color: #0f172a;
+      color: #ffffff;
       font-size: 11px;
       font-weight: 900;
       letter-spacing: 0.6px;
@@ -373,80 +377,80 @@
     }
 
     .highlight-card h3 {
-      font-size: 20px;
+      font-size: 19px;
       font-weight: 800;
-      color: #fbbf24;
-      margin-bottom: 12px;
+      color: #b45309;
+      margin-bottom: 10px;
     }
 
     .highlight-card p {
-      font-size: 14.5px;
-      color: #e2e8f0;
-      line-height: 1.7;
+      font-size: 14px;
+      color: #78350f;
+      line-height: 1.65;
     }
 
     /* DEMANDS SECTION */
     .demands-section {
-      margin-bottom: 60px;
+      margin-bottom: 45px;
     }
 
     .section-header {
       text-align: center;
-      margin-bottom: 36px;
+      margin-bottom: 30px;
     }
 
     .section-header h2 {
-      font-size: 28px;
+      font-size: 27px;
       font-weight: 800;
-      color: #ffffff;
-      margin-bottom: 8px;
+      color: #0f172a;
+      margin-bottom: 6px;
     }
 
     .section-header p {
-      font-size: 15px;
+      font-size: 14.5px;
       color: var(--muted);
     }
 
     .demands-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+      gap: 18px;
     }
 
     .demand-item {
-      background: var(--card-bg);
+      background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 16px;
-      padding: 22px 24px;
+      padding: 20px 22px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.03);
     }
 
     .demand-item h4 {
-      font-size: 16px;
+      font-size: 15.5px;
       font-weight: 800;
-      color: #38bdf8;
-      margin-bottom: 8px;
+      color: #0284c7;
+      margin-bottom: 6px;
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     .demand-item p {
       font-size: 13.5px;
-      color: #cbd5e1;
+      color: #334155;
       line-height: 1.6;
     }
 
     /* FOOTER */
     footer {
       width: 100%;
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 30px 20px;
+      background: #ffffff;
       border-top: 1px solid var(--border);
+      padding: 26px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 14px;
+      gap: 10px;
       text-align: center;
       color: var(--muted);
       font-size: 12.5px;
@@ -456,7 +460,8 @@
       .hero-grid { grid-template-columns: 1fr; gap: 35px; }
       .stats-strip { grid-template-columns: repeat(2, 1fr); }
       .demands-grid { grid-template-columns: 1fr; }
-      .hero-title { font-size: 32px; }
+      .demand-item[style*="span 2"] { grid-column: span 1 !important; }
+      .hero-title { font-size: 30px; }
     }
   </style>
 </head>
@@ -471,24 +476,26 @@
 
   <!-- HEADER -->
   <header>
-    <a href="#" class="brand">
-      <img src="./logo.jpg" alt="Fon Mağdurları Hak Arama Platformu Logosu" class="brand-logo-img">
-      <div class="brand-text">
-        <h1>FON MAĞDURLARI</h1>
-        <span>Hak Arama ve Dayanışma Platformu</span>
-      </div>
-    </a>
-
-    <div class="header-actions">
-      <a class="btn-pdf-header" href="./Basin_Bulteni_19112026.pdf" target="_blank">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-          <polyline points="14 2 14 8 20 8"></polyline>
-          <line x1="16" y1="13" x2="8" y2="13"></line>
-          <line x1="16" y1="17" x2="8" y2="17"></line>
-        </svg>
-        Basın Bülteni (PDF)
+    <div class="header-inner">
+      <a href="#" class="brand">
+        <img src="./logo.jpg" alt="Fon Mağdurları Hak Arama Platformu Logosu" class="brand-logo-img">
+        <div class="brand-text">
+          <h1>FON MAĞDURLARI</h1>
+          <span>Hak Arama ve Dayanışma Platformu</span>
+        </div>
       </a>
+
+      <div class="header-actions">
+        <a class="btn-pdf-header" href="./Basin_Bulteni_19112026.pdf" target="_blank">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
+          </svg>
+          Basın Bülteni (PDF)
+        </a>
+      </div>
     </div>
   </header>
 
