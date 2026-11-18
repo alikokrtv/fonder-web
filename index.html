@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FON MAĞDURLARI HAK ARAMA PLATFORMU | fonder.org.tr</title>
   <meta name="description" content="Fon Mağdurları Hak Arama Platformu Resmi Portalı. Birikimlerimize erişim, kayıplarımıza çözüm istiyoruz: Anapara, TÜFE farkı ve stopaj iadeleri eksiksiz ödenmelidir.">
+  <link rel="icon" type="image/jpeg" href="./logo.jpg">
+  <link rel="apple-touch-icon" href="./logo.jpg">
+  <meta property="og:image" content="./logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -78,6 +81,17 @@
       gap: 14px;
       text-decoration: none;
       color: var(--text);
+    }
+
+    .brand-logo-img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 16px var(--accent-glow);
+      border: 2px solid rgba(59, 130, 246, 0.6);
+      background: #ffffff;
+      flex-shrink: 0;
     }
 
     .brand-icon {
@@ -458,11 +472,7 @@
   <!-- HEADER -->
   <header>
     <a href="#" class="brand">
-      <div class="brand-icon">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 2L3 7v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-9-5zm0 18c-3.75-1.12-6.5-4.88-6.9-9.5h13.8c-.4 4.62-3.15 8.38-6.9 9.5z"/>
-        </svg>
-      </div>
+      <img src="./logo.jpg" alt="Fon Mağdurları Hak Arama Platformu Logosu" class="brand-logo-img">
       <div class="brand-text">
         <h1>FON MAĞDURLARI</h1>
         <span>Hak Arama ve Dayanışma Platformu</span>
@@ -504,6 +514,7 @@
 
       <!-- ACTION CARD -->
       <div class="action-card">
+        <img src="./logo.jpg" alt="Platform Logosu" style="width: 76px; height: 76px; border-radius: 50%; margin: 0 auto 14px; display: block; border: 2px solid rgba(56, 189, 248, 0.6); box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4); background: #ffffff;">
         <span class="action-date-tag">19.11.2026 · ANKARA DEKLARASYONU</span>
         <h3 class="action-title">Resmi Basın Dosyası</h3>
         <p class="action-desc">
